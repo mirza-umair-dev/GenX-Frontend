@@ -16,7 +16,6 @@ const AppContextProvider = ({ children }) => {
   }, []);
 
 
-  console.log("AppContext user:", user,credits);
 
   const getUser = async () => {
       const token = localStorage.getItem('token');
