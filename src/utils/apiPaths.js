@@ -1,5 +1,5 @@
 
-export const  BASE_URL= 'http://localhost:3000'
+export const  BASE_URL= 'https://genx-backend-tr0q.onrender.com'
 export const API_PATHS = {
     AUTH: {
         SIGN_UP: '/api/auth/register',
