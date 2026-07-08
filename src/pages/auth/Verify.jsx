@@ -4,7 +4,6 @@ import AppContext from '../../context/AppContext';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import { useNavigate } from 'react-router-dom';
-
 const Verify = () => {
   const inputRef = useRef([]);
   const navigate = useNavigate();
@@ -14,6 +13,8 @@ const Verify = () => {
       inputRef.current[index + 1].focus();
     }
   }
+
+  
 
   const handleKeyDown = (e, index) => {
     if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
@@ -40,19 +41,17 @@ const Verify = () => {
     try {
       const { data } = await axiosInstance.post(API_PATHS.AUTH.verifyOtp, { otp });
       if (data.success) {
+       
         navigate('/generate-img')
-        console.log("success");
         seterror('')
       }else{
         seterror(data.message || "Invalid Otp");
-        console.log(data.message);
       }
       
     } catch (error) {
-      console.error(error);
       seterror(error.response?.data?.message || "Something went wrong, please try again.");
     }
-    console.log(otp);
+    
   }
   return (
     <div className='flex items-center justify-center h-screen flex-col gap-8'>

@@ -8,6 +8,7 @@ import img4 from '../assets/ai images/img4.jpeg'
 import img5 from '../assets/ai images/img5.jpeg'
 import img6 from '../assets/ai images/img6.jpeg'
 import AppContext from '../context/AppContext'
+
 const GenerateImg = () => {
   const {generateImage} = useContext(AppContext);
   const images =[img1,img2,img3,img4,img5,img6];
